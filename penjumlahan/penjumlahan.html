@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kelompok 5</title>
+    <link rel="stylesheet" href="../asset/css/home.css" />
+    <style>
+      .buah, .hewan, .sayur {
+        background-size: cover;
+        text-indent: -9999px;
+        border: 2px solid #007bff;
+        display: inline-block;
+        padding: 70px 80px;
+        margin: 0 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .buah {
+        background-image: url("../asset/images/icon-pilihan/buah.jpg");
+      }
+      .hewan {
+        background-image: url("../asset/images/icon-pilihan/hewan.jpg");
+      }
+      .sayur {
+        background-image: url("../asset/images/icon-pilihan/sayur.jpg");
+      }
+      .back-btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        display: block;
+        width: 60px;
+        height: 60px;
+        background-image: url("../asset/images/icon/back.png");
+        background-size: cover;
+        text-indent: -9999px;
+      }
+      .buah:hover, .hewan:hover, .sayur:hover {
+        transform: scale(1.1); /* Perbesar ukuran tombol saat disorot */
+        transition: transform 0.3s ease; /* Animasi perubahan ukuran dengan durasi 0.3 detik */
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a href="../Home.html" class="back-btn">Back to Home</a>
+      <h1>SILAHKAN PILIH</h1>
+      <div class="menu-container">
+        <a href="../penjumlahan/buah/penjumlahan.html" class="buah">Buah</a>
+        <a href="../penjumlahan/hewan/penjumlahan3.html" class="hewan">Hewan</a>
+        <a href="../penjumlahan/sayur/penjumlahan2.html" class="sayur">Sayur</a>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script>
+      anime({
+        targets: '.buah, .hewan, .sayur',
+        translateY: [-50, 0],
+        opacity: [0, 1],
+        delay: anime.stagger(100),
+        easing: 'easeInOutQuad'
+      });
+    </script>
+  </body>
+</html>

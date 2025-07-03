@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kelompok 5 - Leaderboard</title>
+    <link rel="stylesheet" href="asset/css/home.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            justify-content: center;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 70px;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: block;
+            width: 60px;
+            height: 60px;
+            background-image: url("asset/images/icon/back.png");
+            background-size: cover;
+            text-indent: -9999px;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 50px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #e9e9e9;
+        }
+        .rank {
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="Home.html" class="back-btn">Back to Home</a>
+        <h1>Leaderboard</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Nama Pengguna</th>
+                    <th>Keaktifan</th>
+                    <th>Skor Penjumlahan</th>
+                    <th>Skor Pengurangan</th>
+                    <th>Skor Total</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard">
+            </tbody>
+        </table>
+    </div>
+    <script>
+        fetch('leaderboard.php')
+            .then(response => response.json())
+            .then(data => {
+                const leaderboard = document.getElementById('leaderboard');
+                leaderboard.innerHTML = ''; // clear previous data if any
+                data.forEach((user, index) => {
+                    const row = document.createElement('tr');
+                    const rankCell = document.createElement('td');
+                    const namaUserCell = document.createElement('td');
+                    const keaktifanCell = document.createElement('td');
+                    const skorPenjumlahanCell = document.createElement('td');
+                    const skorPenguranganCell = document.createElement('td');
+                    const skorTotalCell = document.createElement('td');
+
+                    rankCell.textContent = index + 1;
+                    rankCell.classList.add('rank');
+
+                    namaUserCell.textContent = user.nama_user;
+                    keaktifanCell.textContent = user.keaktifan;
+                    skorPenjumlahanCell.textContent = user.skor_penjumlahan;
+                    skorPenguranganCell.textContent = user.skor_pengurangan;
+                    skorTotalCell.textContent = Math.round(user.skor_total);
+
+                    row.appendChild(rankCell);
+                    row.appendChild(namaUserCell);
+                    row.appendChild(keaktifanCell);
+                    row.appendChild(skorPenjumlahanCell);
+                    row.appendChild(skorPenguranganCell);
+                    row.appendChild(skorTotalCell);
+                    
+                    leaderboard.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>

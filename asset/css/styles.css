@@ -1,0 +1,150 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffff;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 20px;
+}
+
+.gambar-h1 {
+  margin-left: 510px;
+  text-align: center;
+  max-width: 350px;
+  height: auto;
+}
+
+.container {
+  background-color: #ffff;
+  border-radius: 8px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  margin-left: 250px;
+  top: 200px;
+}
+
+#question-container {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.game-image {
+  max-width: 100px;
+  max-height: 100px;
+  margin: 5px;
+}
+
+.options-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.option-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.option-btn:hover {
+  background-color: #0056b3;
+}
+
+#result-container {
+  margin-top: 10px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fff; /* Warna background default sebelum memilih opsi */
+  color: #333; /* Warna teks default sebelum memilih opsi */
+}
+
+#result-container.correct {
+  background-color: #d4edda; /* Warna background untuk jawaban benar */
+  color: #155724; /* Warna teks untuk jawaban benar */
+  border: 1px solid #c3e6cb; /* Warna border untuk jawaban benar */
+}
+
+#next-btn {
+  margin: 20px auto 0; /* Atur margin atas, margin kiri dan kanan otomatis (auto), dan margin bawah 0 */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  display: block; /* Ubah tombol menjadi blok agar dapat diberi lebar dan diatur margin otomatis */
+  width: fit-content; /* Atur lebar tombol sesuai dengan konten */
+}
+
+#next-btn:hover {
+  background-color: #218838;
+}
+
+.question-image {
+  width: 100px;
+  margin: 5px;
+}
+
+.option-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.option-btn:hover {
+  background-color: #0056b3;
+}
+
+#result-container {
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#next-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#next-btn:hover {
+  background-color: #218838;
+}
+
+.return-btn {
+  background-color: #28a745; /* Warna hijau */
+  color: #fff; /* Warna teks putih */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.return-btn:hover {
+  background-color: #218838; /* Warna hijau gelap saat hover */
+}
